@@ -18,6 +18,20 @@ console.log(twentyPercent([10, 20, 30])); // [ 8, 16, 24 ]
 // your code here!
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
+function coupon(value){
+
+    return function changed(array){
+       const discounted = array.map(price => price * (1 - value));
+    return discounted;
+    }
+}
+// Honestly, I forgot about my array.map method on this one, If I had remembered earlier I would have saved myself so many debugging errors.
+let tenPercent = coupon(0.1);
+console.log(tenPercent([10, 20, 30])); // [ 9, 18, 27 ]
+
+
+let twentyPercent = coupon(0.2);
+console.log(twentyPercent([10, 20, 30])); // [ 8, 16, 24 ]
 
 try {
   module.exports = coupon;

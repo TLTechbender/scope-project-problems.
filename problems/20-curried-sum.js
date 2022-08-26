@@ -43,7 +43,40 @@ AFTER YOU ARE FINISHED WITH THIS PROBLEM, ASK FOR A CODE REVIEW
 ***********************************************************************/
 
 // your code here
+// Omo, I really don't understand all the english in this question oooo
+//
+//
 
+function curriedSum(n) {
+  let count = 0;
+  let nums = [];
+
+  return function sumUp(num) {
+    count++;
+    nums.push(num);
+
+    if (count === n) {
+      const sum = nums.reduce((acc, el) => acc + el);
+      return sum;
+    } else {
+      return sumUp;
+    }
+  }
+}
+
+//I tried to do it, but I couldn't transfer my thoughts to code, even though I did get far!!!!
+
+
+const sum = curriedSum(4);
+console.log(sum(5)) // returns a function
+console.log(sum(20)) // returns a function
+console.log(sum(30)) // returns a function
+console.log(sum(20)); // => returns 75
+
+// 2
+// this function can also be invoked like this:
+const sum2 = curriedSum(3)(2)(1)(7); // => returns 10
+console.log(sum2)
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
 try {
